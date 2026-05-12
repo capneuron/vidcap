@@ -4,7 +4,9 @@ Extract screenshots and GIFs from video files via the command line.
 
 ## Requirements
 
-- [ffmpeg](https://ffmpeg.org/download.html) (ffmpeg + ffprobe must be in PATH)
+```
+winget install Gyan.FFmpeg
+```
 
 ## Usage
 
