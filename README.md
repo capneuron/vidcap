@@ -4,11 +4,19 @@ Extract screenshots and GIFs from video files via the command line.
 
 ## Requirements
 
+**Windows**
 ```
 winget install Gyan.FFmpeg
 ```
 
+**Mac**
+```
+brew install ffmpeg
+```
+
 ## Usage
+
+### Windows
 
 Screenshots every N seconds
 ```
@@ -28,6 +36,28 @@ GIF clips of X duration, every N seconds
 N GIF clips of X duration, evenly spaced across the video
 ```
 ./vidcap.exe gifs --duration 3s --count 5 input.mp4
+```
+
+### Mac
+
+Screenshots every N seconds
+```
+./vidcap screenshots --every 10s input.mp4
+```
+
+N screenshots evenly spaced across the video
+```
+./vidcap screenshots --count 10 input.mp4
+```
+
+GIF clips of X duration, every N seconds
+```
+./vidcap gifs --duration 3s --every 30s input.mp4
+```
+
+N GIF clips of X duration, evenly spaced across the video
+```
+./vidcap gifs --duration 3s --count 5 input.mp4
 ```
 
 Output is saved next to the input file:
@@ -53,6 +83,12 @@ Output is saved next to the input file:
 
 ## Build
 
+**Windows**
 ```
 go build -o vidcap.exe .
+```
+
+**Mac**
+```
+go build -o vidcap .
 ```
