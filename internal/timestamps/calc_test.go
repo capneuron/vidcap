@@ -65,3 +65,10 @@ func TestCalcCount_InvalidCount(t *testing.T) {
 		t.Fatal("expected error for zero count")
 	}
 }
+
+func TestCalcCount_InvalidDuration(t *testing.T) {
+	_, err := timestamps.CalcCount(0, 3)
+	if err == nil {
+		t.Fatal("expected error for zero duration")
+	}
+}

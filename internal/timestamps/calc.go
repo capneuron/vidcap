@@ -9,7 +9,11 @@ func CalcEvery(duration, interval float64) ([]float64, error) {
 		return nil, fmt.Errorf("interval must be positive, got %v", interval)
 	}
 	var ts []float64
-	for t := interval; t < duration; t += interval {
+	for n := 1; ; n++ {
+		t := float64(n) * interval
+		if t >= duration {
+			break
+		}
 		ts = append(ts, t)
 	}
 	return ts, nil
@@ -20,6 +24,9 @@ func CalcEvery(duration, interval float64) ([]float64, error) {
 func CalcCount(duration float64, count int) ([]float64, error) {
 	if count <= 0 {
 		return nil, fmt.Errorf("count must be positive, got %v", count)
+	}
+	if duration <= 0 {
+		return nil, fmt.Errorf("duration must be positive, got %v", duration)
 	}
 	ts := make([]float64, count)
 	for i := 0; i < count; i++ {
