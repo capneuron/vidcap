@@ -10,17 +10,23 @@ winget install Gyan.FFmpeg
 
 ## Usage
 
+Screenshots every N seconds
 ```
-# Screenshots every N seconds
 ./vidcap.exe screenshots --every 10s input.mp4
+```
 
-# N screenshots evenly spaced across the video
+N screenshots evenly spaced across the video
+```
 ./vidcap.exe screenshots --count 10 input.mp4
+```
 
-# GIF clips of X duration, every N seconds
+GIF clips of X duration, every N seconds
+```
 ./vidcap.exe gifs --duration 3s --every 30s input.mp4
+```
 
-# N GIF clips of X duration, evenly spaced across the video
+N GIF clips of X duration, evenly spaced across the video
+```
 ./vidcap.exe gifs --duration 3s --count 5 input.mp4
 ```
 
