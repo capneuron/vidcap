@@ -22,9 +22,9 @@ func Duration(inputPath string) (float64, error) {
 		"-print_format", "json",
 		"-show_format",
 		inputPath,
-	).Output()
+	).CombinedOutput()
 	if err != nil {
-		return 0, fmt.Errorf("ffprobe failed on %q: %w", inputPath, err)
+		return 0, fmt.Errorf("ffprobe failed on %q: %w\n%s", inputPath, err, out)
 	}
 	var result probeResult
 	if err := json.Unmarshal(out, &result); err != nil {
